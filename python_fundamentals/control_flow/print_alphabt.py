@@ -3,4 +3,4 @@
 alphabt = "abcdfghijklmnoprstuvwxyz\n"
 
 for i in range(len(alphabt)):
-    print(alphabt[i], end='')
+    print("{}".format(alphabt[i]), end='')
