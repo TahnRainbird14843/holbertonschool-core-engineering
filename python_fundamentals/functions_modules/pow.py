@@ -11,4 +11,4 @@ def pow(a, b):
             out /= a
             b += 1
 
-    return (out)
+    return (round(out, 15))

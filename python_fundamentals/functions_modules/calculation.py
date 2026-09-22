@@ -6,7 +6,7 @@ from calculator_1 import add, sub, mult, div
 if __name__ == "__main__":
     a = 10
     b = 5
-    print("{}".format(add(a, b)))
-    print("{}".format(sub(a, b)))
-    print("{}".format(mult(a, b)))
-    print("{}".format(div(a, b)))
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mult(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
