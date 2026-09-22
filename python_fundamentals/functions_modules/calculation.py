@@ -2,9 +2,11 @@
 
 from calculator_1 import add, sub, mult, div
 
-a = 10
-b = 5
-print(add(a, b))
-print(sub(a, b))
-print(mult(a, b))
-print(div(a, b))
+
+if __name__ == "__main__":
+    a = 10
+    b = 5
+    print("{}".format(add(a, b)))
+    print("{}".format(sub(a, b)))
+    print("{}".format(mult(a, b)))
+    print("{}".format(div(a, b)))
