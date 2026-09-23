@@ -6,10 +6,10 @@ def best_score(a_dictionary):
         return (None)
 
     for i, (key, val) in enumerate(a_dictionary.items()):
-        if (best == None):
+        if (best is None):
             best = val
             winner = key
-        if (int(val) > best):
+        elif (int(val) > best):
             winner = key
             best = val
     return (winner)
