@@ -10,21 +10,25 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.set_size(size)
         self.position(position)
-    
-    def set_size(self, size):
+
+    @property
+    def size(self):
+        return (self.__size)
+
+    @size.setter
+    def size(self, size):
         self.validate(size)
         self.__size = size
-    
-    def get_size(self):
-        return (self.__size)
-    
+
+    @property
+    def position(self):
+        return (self.__position)
+
+    @position.setter
     def position(self, position):
         self.val_position(position)
         self.__position = position
-    
-    def position(self):
-        return (self.__position)
-    
+
     def val_position(self, position):
         if (type(position) is not tuple or len(position) != 2 or type(position[1]) is not int
         or type(position[0]) is not int or position[0] < 0 or position[1] < 0):
@@ -37,10 +41,10 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             pass
-    
+
     def area(self):
         return (self.get_size() ** 2)
-    
+
     def get_print(self):
         side = self.get_size()
         position = self.position()
@@ -57,9 +61,9 @@ class Square:
                 row += "#"
             row += "\n"
         return (row)
-    
+
     def my_print(self):
         print(self.get_print())
-    
+
     def __str__(self):
         return (self.get_print())

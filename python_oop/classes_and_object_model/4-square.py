@@ -7,13 +7,13 @@ module
 
 class Square:
     """square"""
-    def __init__(self, size):
+    def __init__(self, size=0):
         self.size = size
-    
+
     @property
     def size(self, size):
         return (self.__size)
-    
+
     @size.setter
     def size(self, size):
         self.validate(size)
@@ -26,9 +26,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             pass
-    
+
     def area(self):
         return (self.size ** 2)
-
-my_square = Square(3)
-print(my_square.size)
