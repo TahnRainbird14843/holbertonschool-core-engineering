@@ -1,0 +1,1 @@
+This directory is for learning object oriented programming in python
