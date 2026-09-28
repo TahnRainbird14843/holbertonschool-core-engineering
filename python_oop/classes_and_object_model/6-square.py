@@ -50,7 +50,6 @@ class Square:
         position = self.position
         row = ""
         if (side == 0):
-            print(row)
             return (row)
         for i in range(position[1]):
             row += "\n"
