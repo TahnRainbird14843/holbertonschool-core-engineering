@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+module
+"""
+
 class Square:
+    """square"""
     def __init__(self, size):
         self.validate(size)
         self.__size = size
