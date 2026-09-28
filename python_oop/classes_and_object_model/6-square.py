@@ -55,8 +55,8 @@ class Square:
         for i in range(position[1]):
             row += "\n"
         for i in range(side):
-            for j in range(max(0, position[0] - 1)):
-                row += "_"
+            for j in range(position[0]):
+                row += " "
             for j in range(side):
                 row += "#"
             if (i != side - 1):
