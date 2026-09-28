@@ -59,7 +59,8 @@ class Square:
                 row += "_"
             for j in range(side):
                 row += "#"
-            row += "\n"
+            if (i != side - 1):
+                row += "\n"
         return (row)
 
     def my_print(self):
