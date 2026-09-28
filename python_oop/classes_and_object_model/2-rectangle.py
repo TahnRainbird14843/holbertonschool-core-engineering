@@ -6,7 +6,6 @@ module
 
 class Rectangle:
     """rectangle"""
-    
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -39,4 +38,7 @@ class Rectangle:
         return (self.width * self.height)
     
     def perimeter(self):
-        return (2 * self.width + 2 * self.height)
+        if (self.width != 0 or self.height != 0):
+            return (2 * self.width + 2 * self.height)
+        else:
+            return (0)

@@ -4,17 +4,20 @@
 module
 """
 
+
 class Square:
     """square"""
     def __init__(self, size):
-        self.set_size(size)
+        self.size = size
     
-    def set_size(self, size):
+    @property
+    def size(self, size):
+        return (self.__size)
+    
+    @size.setter
+    def size(self, size):
         self.validate(size)
         self.__size = size
-    
-    def get_size(self, size):
-        return (self.__size)
 
     def validate(self, size):
         if (type(size) is not int):
@@ -25,4 +28,7 @@ class Square:
             pass
     
     def area(self):
-        return (self.get_size() ** 2)
+        return (self.size ** 2)
+
+my_square = Square(3)
+print(my_square.size)

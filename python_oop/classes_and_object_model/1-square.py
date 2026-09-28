@@ -4,6 +4,7 @@
 file
 """
 
+
 class Square:
     """square"""
     def __init__(self, size):

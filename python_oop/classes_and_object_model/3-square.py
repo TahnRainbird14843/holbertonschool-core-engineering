@@ -4,6 +4,7 @@
 module
 """
 
+
 class Square:
     """square"""
     def __init__(self, size):
@@ -18,5 +19,5 @@ class Square:
         else:
             pass
     
-    def area(size):
+    def area(self):
         return (self.__size ** 2)
