@@ -8,8 +8,8 @@ module
 class Square:
     """square"""
     def __init__(self, size=0, position=(0, 0)):
-        self.set_size(size)
-        self.position(position)
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -46,7 +46,7 @@ class Square:
         return (self.get_size() ** 2)
 
     def get_print(self):
-        side = self.get_size()
+        side = self.size
         position = self.position()
         row = ""
         if (side == 0):

@@ -27,7 +27,7 @@ class Square:
 
     def area(self):
         return (self.get_size() ** 2)
-    
+
     def my_print(self):
         side = self.get_size()
         row = ""
