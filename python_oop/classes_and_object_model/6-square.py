@@ -43,11 +43,11 @@ class Square:
             pass
 
     def area(self):
-        return (self.get_size() ** 2)
+        return (self.size ** 2)
 
     def get_print(self):
         side = self.size
-        position = self.position()
+        position = self.position
         row = ""
         if (side == 0):
             print(row)
