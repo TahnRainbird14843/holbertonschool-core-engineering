@@ -5,8 +5,8 @@ This implements a square class which
 is a subclass of rectangle
 """
 
-
 Rectangle = __import__('2-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """this is the square class"""
