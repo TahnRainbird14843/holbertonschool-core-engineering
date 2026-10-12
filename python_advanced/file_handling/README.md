@@ -1,0 +1,1 @@
+This directory is for learning file handling in python
