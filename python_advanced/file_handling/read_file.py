@@ -4,6 +4,7 @@
 This read a file
 """
 
+
 def read_file(filename=""):
     """This reads a file to stdout"""
     with open(filename, 'r') as f:
