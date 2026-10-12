@@ -8,4 +8,4 @@ write to a file
 def write_file(filename="", text=""):
     """write to file"""
     with open(filename, 'w') as f:
-        f.write(text)
+        return f.write(text)

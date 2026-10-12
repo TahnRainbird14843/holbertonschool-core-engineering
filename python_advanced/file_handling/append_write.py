@@ -8,4 +8,4 @@ append to file
 def append_write(filename="", text=""):
     """append text to file"""
     with open(filename, 'a') as f:
-        f.write(text)
+        return f.write(text)
