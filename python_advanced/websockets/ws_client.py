@@ -12,7 +12,7 @@ async def connect_and_send(uri: str, text: str) -> str:
 
 
 async def main():
-    await connect_and_send("ws://0.0.0.0:8765", "demo")
+    await connect_and_send("ws://0.0.0.0:8765", "Hello WebSocket")
 
 
 asyncio.run(main())
