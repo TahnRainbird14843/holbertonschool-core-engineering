@@ -10,8 +10,8 @@ async def connection_handler(websocket):
 
 
 async def main():
-    async with websockets.serve(connection_handler, "0.0.0.0", 8765):
-        pass
+    server = await websockets.serve(connection_handler, "0.0.0.0", 8765)
+    await server.serve_forever()
 
 
 if __name__ == "__main__":
