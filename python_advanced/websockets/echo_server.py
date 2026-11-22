@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import asyncio
-from websockets.asyncio.server import serve
+import websockets
 
 
 async def connection_handler(websocket):
@@ -10,8 +10,9 @@ async def connection_handler(websocket):
 
 
 async def main():
-    server = await serve(connection_handler, "localhost", 8765)
-    await server.serve_forever()
+    async with websockets.serve(connection_handler, "localhost", 8765):
+        pass
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
