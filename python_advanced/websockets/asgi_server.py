@@ -11,8 +11,8 @@ async def homepage(request):
 
 async def websocket_endpoint(websocket):
     await websocket.accept()
-    async for message in websocket:
-        await websocket.send(message)
+    async for message in websocket.iter_text():
+        await websocket.send_text(message)
 
 
 app = Starlette(routes=[
