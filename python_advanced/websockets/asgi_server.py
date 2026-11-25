@@ -1,28 +1,23 @@
-#!/usr/bin/env python3
-
 from starlette.applications import Starlette
-from starlette.responses import HTMLResponse, PlainTextResponse
+from starlette.endpoints import WebSocketEndpoint, HTTPEndpoint
+from starlette.responses import HTMLResponse
 from starlette.routing import Route, WebSocketRoute
 
 
-async def homepage(request):
-    with open('index.html', 'r') as f:
-        return HTMLResponse(f.read())
+class Homepage(HTTPEndpoint):
+    async def get(self, request):
+        with open('index.html', 'r') as f:
+            return HTMLResponse(f.read())
 
+class Echo(WebSocketEndpoint):
+    encoding = "text"
 
-async def websocket_endpoint(websocket):
-    await websocket.accept()
-    async for message in websocket:
-        await websocket.send(message)
+    async def on_receive(self, websocket, data):
+        await websocket.send_text(f"Message text was: {data}")
 
+routes = [
+    Route("/", Homepage),
+    WebSocketRoute("/ws", Echo)
+]
 
-async def js_file(request):
-    with open('chat.js', 'r') as f:
-        return PlainTextResponse(f.read())
-
-
-app = Starlette(routes=[
-    Route("/", homepage),
-    WebSocketRoute("/ws", websocket_endpoint),
-    Route("/chat.js", js_file)
-])
+app = Starlette(routes=routes)
